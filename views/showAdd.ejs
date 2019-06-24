@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加学生信息</title>
+    <link rel="stylesheet" href="/css/01.css">
+</head>
+<body>
+    <div id="box">
+        学生：<input type="text" id="xuesheng"><br>
+        性别：<input type="text" id="sex"><br>
+        语文：<input type="text" id="yuwen"><br>
+        数学：<input type="text" id="math"><br>
+        英语：<input type="text" id="English"><br>
+        <input type="submit" id="btn"><a href="/">点我返回首页</a>
+    </div>
+
+    <script src="/js/ajax.js"></script>
+    <script>
+        btn.onclick = function(){
+            ajax({
+                url:'/addstudent',
+                type:'post',
+                data:{
+                    name:xuesheng.value,
+                    sex:sex.value,
+                    yuwen:yuwen.value,
+                    math:math.value,
+                    English:English.value,
+                },
+                success(msg){
+                    alert(msg);
+                }
+            })
+        }
+    </script>
+
+</body>
+</html>

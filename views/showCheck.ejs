@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>删除学生页面</title>
+    <link rel="stylesheet" href="/css/01.css">
+</head>
+<body>
+<div id="box">
+    你要查看的学生姓名是：<input type="text" id="xuesheng"><br>
+    <input type="submit" id="btn"><a href="/">点我返回首页</a>
+</div>
+
+<script src="/js/ajax.js"></script>
+<script>
+    btn.onclick = function(){
+        ajax({
+            url:'/checkstudent',
+            type:'post',
+            data:{
+                name:xuesheng.value,
+            },
+            success(msg){
+                alert(msg);
+            }
+        })
+    }
+</script>
+</body>
+</html>
